@@ -52,9 +52,11 @@ function spotifyThisSong(song) {
 }
 
 function movieThis(movieName) {
+
+    movieName = movieName || "Mr. Nobody";
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
-    // This line is just to help us debug against the actual URL.
-    console.log(queryUrl);
+
+
     request(queryUrl, function(error, response, body) {
         // If the request is successful
         if (!error && response.statusCode === 200) {
@@ -72,24 +74,24 @@ function movieThis(movieName) {
     });
 }
 
-function doThis(){
-  fs.readFile("random.txt", "UTF-8", function(err,data){
+function doThis() {
+    fs.readFile("random.txt", "UTF-8", function(err, data) {
 
-    var split = data.split(",");
+        var split = data.split(",");
 
-    var func = split[0];
-    var str = split[1];
+        var func = split[0];
+        var str = split[1];
 
-    if(func ==="spotify-this-song"){
-      func = "spotifyThisSong";
-    }else if(func ==="my-tweets"){
-      func = "twitter";
-    }else if(func ==="movie-this" ){
-      func = "movie-this";
-    }
+        if (func === "spotify-this-song") {
+            func = "spotifyThisSong";
+        } else if (func === "my-tweets") {
+            func = "twitter";
+        } else if (func === "movie-this") {
+            func = "movie-this";
+        }
 
-    eval(func+"("+ str + ")");
-  });
+        eval(func + "(" + str + ")");
+    });
 }
 
 switch (command) {
@@ -102,7 +104,7 @@ switch (command) {
     case "movie-this":
         movieThis(myStr);
         break;
-    case "do-what-it-says" :
+    case "do-what-it-says":
         doThis();
         break;
     default:
