@@ -1,0 +1,24 @@
+{
+  "name": "liri",
+  "version": "0.0.1",
+  "description": "LIRI is a Language Interpretation and Recognition Interface. ",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorwltsang/liri.git"
+  },
+  "author": "Victor Tsang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorwltsang/liri/issues"
+  },
+  "homepage": "https://github.com/victorwltsang/liri#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.0"
+  }
+}
